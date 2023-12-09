@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop in style</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+        </div>
+    </div>
+</header>
+<div class="container ">
+    <div class="row">
+        <d class="d-flex flex-column justify-content-center align-content-center p-4">
+            <form class="m-auto w-50" method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="username" name="username"
+                        placeholder="Ingrese su usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="Ingrese su contraseña">
+                </div>
+
+                <button type="submit" class="btn btn-primary mx-auto d-block">Entrar</button>
+            </form>
+
+    </div>
+</div>
+</div>
+{% endblock %}
