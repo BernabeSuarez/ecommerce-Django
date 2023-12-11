@@ -18,11 +18,12 @@ def add_cart(request):
     if request.POST.get("action") == "post":
         # obtener la data
         product_id = int(request.POST.get("product_id"))
+        product_qty = int(request.POST.get("product_qty"))
 
         # buscar el producto en la DB
         product = get_object_or_404(Product, id=product_id)
         # guardarlo en la sesion
-        cart.add(product=product)
+        cart.add(product=product, quantity=product_qty)
 
         # obtener la cantidad de elemntos del carrito
         cart_quantity = cart.__len__()
